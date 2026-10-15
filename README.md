@@ -1,11 +1,11 @@
 # HomePulse
 
-Smart-home energy and water monitoring dashboard. Students build pipelines and GitOps workflows to deploy this app during AD438 exercises.
+Example smart-home monitoring application for Red Hat Training courses and lessons.
 
 ## Architecture
 
 ```
-api/                        FastAPI backend (Python 3.14+, uv)
+api/                        FastAPI backend (Python 3.12+, uv)
   homepulse/
     main.py                 App entry point, route definitions
     alerts.py               Rule-based alert engine
