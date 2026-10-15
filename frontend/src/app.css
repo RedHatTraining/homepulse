@@ -1,0 +1,6 @@
+/* Dark terminal-style masthead */
+.pf-v6-c-masthead {
+  --pf-v6-c-masthead--BackgroundColor: #151515 !important;
+  background-color: #151515 !important;
+  font-family: monospace;
+}
