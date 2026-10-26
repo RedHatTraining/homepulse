@@ -7,9 +7,10 @@ import {
   GridItem,
   Label,
 } from "@patternfly/react-core";
+import { loadColor, percentOf } from "../utils/metrics.js";
 
 function Bar({ value, max, color, showPct = false }) {
-  const pct = Math.min(100, Math.round((value / max) * 100));
+  const pct = percentOf(value, max);
   const filled = Math.round(pct / 10);
   const empty = 10 - filled;
   return (
@@ -157,8 +158,8 @@ function DashboardPage() {
                           {(() => {
                             const max = a.nominal_w || a.power_w;
                             const cur = a.status === "on" ? a.power_w : (a.standby_w || 0);
-                            const pct = Math.min(100, Math.round((cur / max) * 100));
-                            const color = pct > 80 ? "#c9190b" : pct > 50 ? "#f0ab00" : "#3e8635";
+                            const pct = percentOf(cur, max);
+                            const color = loadColor(pct);
                             return (
                               <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
                                 <div style={{
