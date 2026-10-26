@@ -58,6 +58,17 @@ From the same `api/` directory:
 uv run ruff check
 ```
 
+## Run frontend tests and linter
+
+From the `frontend/` directory:
+
+```bash
+npm test             # run all tests once (Vitest)
+npm run test:watch   # re-run tests on file changes
+npm run lint         # run ESLint
+npm run lint:fix     # run ESLint and apply automatic fixes
+```
+
 ## Container build
 
 For the backend API:
